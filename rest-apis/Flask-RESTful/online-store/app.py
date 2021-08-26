@@ -14,13 +14,26 @@ items = []
 
 class Item(Resource):
     def get(self, item_name):
-        for item in items:
-            if item['item_name'] == item_name:
-                return item
-        return {'item': None}, 404
+        item = next(filter(lambda x: x['item_name'] == item_name, items), None)
+
+        # -- Same as below --
+        # for item in items:
+        #     if item['item_name'] == item_name:
+        #         return item
+
+        # -- In Java --
+        # Item item = items.stream().filter(item -> item.getItemName() == itemName).findFirst();
+
+        return {'item': item}, 200 if item else 404
+        # same as below
+        # return {'item': item}, 200 if item is not None else 404
 
     def post(self):
         data = request.get_json()
+
+        if next(filter(lambda x: x['item_name'] == data['item_name'], items), None) is not None:
+            return {'message': "An item with name '{}' already exists".format(data['item_name'])}, 400
+
         item = {'item_name': data['item_name'], 'price': data['price']}
         items.append(item)
         return item, 201
