@@ -12,17 +12,17 @@ api = Api(app)
 items = []
 
 
-# Student class inherits Resource class
 class Item(Resource):
     def get(self, item_name):
         for item in items:
             if item['item_name'] == item_name:
                 return item
+        return {'item': None}, 404
 
     def post(self, item_name):
-        item = {'name': item_name, 'price': 12.00}
+        item = {'item_name': item_name, 'price': 12.00}
         items.append(item)
-        return item
+        return item, 201
 
 
 api.add_resource(Item, '/item/<string:item_name>')
