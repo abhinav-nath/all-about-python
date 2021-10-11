@@ -17,7 +17,7 @@ def player_guess():
 
 
 def check_guess(mylist, guess):
-    if(mylist[guess] == 'O'):
+    if (mylist[guess] == 'O'):
         print('Correct guess!')
     else:
         print('Wrong! Better luck next time.')
