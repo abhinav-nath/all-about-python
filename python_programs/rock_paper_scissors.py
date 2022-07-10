@@ -13,6 +13,7 @@ while True:
         print("Please choose a valid letter : [R]ock, [P]aper or [S]cissors")
         continue
 
+    user_choice = str.upper(user_choice)
     print("You chose:", user_choice)
 
     choices = ['R', 'P', 'S']
@@ -21,16 +22,20 @@ while True:
 
     print("I chose:", opponent_choice)
 
-    if opponent_choice == str.upper(user_choice):
+    if opponent_choice == user_choice:
         print("It's a Tie!")
-    elif opponent_choice == 'R' and user_choice.upper() == 'S':
-        print("Rock crushes Scissors, I win!")
-        continue
-    elif opponent_choice == 'S' and user_choice.upper() == 'P':
-        print("Scissors cuts Paper, I win!")
-        continue
-    elif opponent_choice == 'P' and user_choice.upper() == 'R':
-        print("Paper covers Rock, I win!")
-        continue
-    else:
-        print("You win!")
+    elif user_choice == 'R':
+        if opponent_choice == 'S':
+            print("Rock crushes Scissors, You win!")
+        else:
+            print("Paper covers Rock, I win!")
+    elif user_choice == 'P':
+        if opponent_choice == 'R':
+            print("Paper covers Rock, You win!")
+        else:
+            print("Scissors cuts Paper, I win!")
+    elif user_choice == 'S':
+        if opponent_choice == 'P':
+            print("Scissors cuts Paper, You win!")
+        else:
+            print("Rock crushes Scissors, I win!")
