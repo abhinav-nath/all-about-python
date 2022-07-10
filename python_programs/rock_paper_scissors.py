@@ -39,3 +39,7 @@ while True:
             print("Scissors cuts Paper, You win!")
         else:
             print("Rock crushes Scissors, I win!")
+
+    play_again = input("Play again? (y/n): ")
+    if play_again.lower() != "y":
+        break
