@@ -1,32 +1,39 @@
 # General pip commands
 
-- Upgrade pip
+## Upgrade pip
 
-  `pip install --upgrade pip`
+`pip install --upgrade pip`
 
+## Output installed packages in requirements format
 
-- Output installed packages in requirements format
+`pip freeze`
 
-  `pip freeze`
+## Install a library
 
+`pip install <library-name>`
 
-- Install a library
+for ex:
 
-  `pip install <library-name>`
+`pip install flask`
 
-  for ex :
-  - `pip install flask`
-  - `pip install Flask-RESTful` - this will install flask as well
+`pip install Flask-RESTful` - this will install flask as well
 
+## Show version of installed library
 
-- Create a virtual Python environment
+`pip show <library-name`
 
-  * `pip install virtualenv` - this will install virtualvm
+for ex:
 
-  * this will create a folder named `venv` and keep `python 3.5` inside it
-    - `virtualenv venv --python=python3.5` (Linux)
-    - `./venv/Scripts/activate.bat` (Windows)
+`pip show vaex`
 
-  * `source venv/bin/activate` - this will activate the venv
+## Create a virtual Python environment
 
-  * `python --version` - verify Python's version in the venv
+* `pip install virtualenv` - this will install virtualvm
+
+* this will create a folder named `venv` and keep `python 3.5` inside it
+  - `virtualenv venv --python=python3.5` (Linux)
+  - `./venv/Scripts/activate.bat` (Windows)
+
+* `source venv/bin/activate` - this will activate the venv
+
+* `python --version` - verify Python's version in the venv
