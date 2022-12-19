@@ -1,5 +1,5 @@
-Name,Age
-John,35
-Jane,34
-Stacy,28
-Jimmy,25
+Name,Age,Experience
+John,35,12
+Jane,34,11
+Stacy,28,8
+Jimmy,25,5
