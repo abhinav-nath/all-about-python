@@ -1,6 +1,6 @@
 # All about Python
 
-## Python basics
+### Python basics
 
 - [pip](./notes/pip.md)
 - [Data Structure Basics](./01_python-data-structure-basics)
