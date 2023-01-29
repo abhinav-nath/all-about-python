@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+import numpy as np
 
 # Title
 st.title("This is a Title")
@@ -31,7 +33,12 @@ st.error("Error")
 exp = ZeroDivisionError("Trying to divide by Zero")
 st.exception(exp)
 
+
+st.markdown("""---""")
+
+
 # Write text
+st.subheader("Write text")
 st.write("Text with write")
 
 # Using write function, we can also display code in coding format.
@@ -39,7 +46,11 @@ st.write("Text with write")
 st.write(range(10))
 
 
+st.markdown("""---""")
+
+
 # Check box
+st.subheader("Check box")
 # A checkbox returns a boolean value. When the box is checked, it returns a True value else returns a False value.
 # check if the checkbox is checked
 # title of the checkbox is 'Show/Hide'
@@ -48,7 +59,11 @@ if st.checkbox("Show/Hide"):
     st.text("Showing the widget")
 
 
+st.markdown("""---""")
+
+
 # Radio button
+st.subheader("Radio button")
 # first argument is the title of the radio button
 # second argument is the options for the radio button
 status = st.radio("Select Gender: ", ('Male', 'Female'))
@@ -62,7 +77,11 @@ else:
     st.success("Female")
 
 
+st.markdown("""---""")
+
+
 # Selection box
+st.subheader("Selection box")
 # first argument takes the title of the selection box
 # second argument takes options
 hobby = st.selectbox("Hobbies: ",
@@ -82,17 +101,21 @@ hobbies = st.multiselect("Hobbies: ",
 st.write("You selected", len(hobbies), 'hobbies')
 
 
+st.markdown("""---""")
+
+
 # Button
+st.subheader("Button")
 # Create a simple button that does nothing
 st.button("Click me for no reason")
 
 # Create a button, that when clicked, shows a text
-if(st.button("Click me!")):
+if (st.button("Click me!")):
     st.text("Button clicked!!!")
 
 
 # Text Input
-
+st.subheader("Text Input")
 # save the input text in the variable 'name'
 # first argument shows the title of the text input box
 # second argument displays a default text inside the text input area
@@ -100,12 +123,16 @@ name = st.text_input("Enter Your name", "Type Here ...")
 
 # display the name when the submit button is clicked
 # .title() is used to get the input text string
-if(st.button('Submit')):
+if (st.button('Submit')):
     result = name.title()
     st.success(result)
 
 
+st.markdown("""---""")
+
+
 # Slider
+st.subheader("Slider")
 # first argument takes the title of the slider
 # second argument takes the starting of the slider
 # last argument takes the end number
@@ -115,3 +142,27 @@ level = st.slider("Select the level", 1, 5)
 # format() is used to print value
 # of a variable at a specific position
 st.text('Selected: {}'.format(level))
+
+
+st.markdown("""---""")
+
+
+# Display a static table
+st.subheader("Static table")
+df = pd.DataFrame(
+    np.random.randn(10, 5),
+    columns=('col %d' % i for i in range(5)))
+
+st.table(df)
+
+
+st.markdown("""---""")
+
+
+# Display JSON content
+st.subheader("JSON content")
+st.json({
+    'fruit': 'apple',
+    'book': 'maths',
+    'game': 'football'
+})
