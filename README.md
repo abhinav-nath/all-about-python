@@ -20,6 +20,7 @@
 - [PySpark](./pyspark)
 - [Pandas](./pandas)
 - [Vaex](./vaex)
+- [Streamlit](./streamlit)
 - [tkinker](./tkinker)
 
 ### [Python Programs](./python_programs)
