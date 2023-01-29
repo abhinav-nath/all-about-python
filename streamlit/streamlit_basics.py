@@ -101,7 +101,11 @@ hobby = st.selectbox("Hobbies: ",
 st.write("Your hobby is: ", hobby)
 
 
-# Multi-Selectbox
+st.markdown("""---""")
+
+
+# Multi-Select box
+st.subheader("st.multiselect - Multi-Select box")
 # first argument takes the box title
 # second argument takes the options to show
 hobbies = st.multiselect("Hobbies: ",
