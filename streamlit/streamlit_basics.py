@@ -50,20 +50,30 @@ st.markdown("""---""")
 
 
 # Check box
-st.subheader("Check box")
 # A checkbox returns a boolean value. When the box is checked, it returns a True value else returns a False value.
-# check if the checkbox is checked
-# title of the checkbox is 'Show/Hide'
-if st.checkbox("Show/Hide"):
-    # display the text if the checkbox returns True value
-    st.text("Showing the widget")
+st.subheader("st.checkbox")
+
+st.write('What would you like to order?')
+
+icecream = st.checkbox('Ice cream')
+coffee = st.checkbox('Coffee')
+cola = st.checkbox('Cola')
+
+if icecream:
+    st.write("Great! Here's some more 🍦")
+
+if coffee:
+    st.write("Okay, here's some coffee ☕")
+
+if cola:
+    st.write("Here you go 🥤")
 
 
 st.markdown("""---""")
 
 
 # Radio button
-st.subheader("Radio button")
+st.subheader("st.radio - Radio button")
 # first argument is the title of the radio button
 # second argument is the options for the radio button
 status = st.radio("Select Gender: ", ('Male', 'Female'))
@@ -81,7 +91,7 @@ st.markdown("""---""")
 
 
 # Selection box
-st.subheader("Selection box")
+st.subheader("st.selectbox - Selection box")
 # first argument takes the title of the selection box
 # second argument takes options
 hobby = st.selectbox("Hobbies: ",
@@ -105,7 +115,7 @@ st.markdown("""---""")
 
 
 # Button
-st.subheader("Button")
+st.subheader("st.button")
 # Create a simple button that does nothing
 st.button("Click me for no reason")
 
@@ -115,7 +125,7 @@ if (st.button("Click me!")):
 
 
 # Text Input
-st.subheader("Text Input")
+st.subheader("st.text_input")
 # save the input text in the variable 'name'
 # first argument shows the title of the text input box
 # second argument displays a default text inside the text input area
@@ -132,7 +142,7 @@ st.markdown("""---""")
 
 
 # Slider
-st.subheader("Slider")
+st.subheader("st.slider")
 # first argument takes the title of the slider
 # second argument takes the starting of the slider
 # last argument takes the end number
@@ -148,7 +158,7 @@ st.markdown("""---""")
 
 
 # Display a static table
-st.subheader("Static table")
+st.subheader("st.table - Static table")
 df = pd.DataFrame(
     np.random.randn(10, 5),
     columns=('col %d' % i for i in range(5)))
@@ -160,7 +170,7 @@ st.markdown("""---""")
 
 
 # Display JSON content
-st.subheader("JSON content")
+st.subheader("st.json - JSON content")
 st.json({
     'fruit': 'apple',
     'book': 'maths',
