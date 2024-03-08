@@ -24,3 +24,8 @@
 - [tkinker](./tkinker)
 
 ### [Python Programs](./python_programs)
+
+---
+<p align="center">
+  ⭐ Star this repository if it helped you!
+</p>
